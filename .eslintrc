@@ -36,6 +36,9 @@
     "sonarjs",
     "promise",
     "prettier",
+    "testing-library",
+    "jest-dom",
+    "jest",
     "jsx-a11y",
     "import",
     "eslint-plugin-import-helpers"
@@ -53,6 +56,9 @@
     "plugin:sonarjs/recommended",
     "prettier",
     "plugin:prettier/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest/style",
     "plugin:astro/recommended"
   ],
   "rules": {
@@ -123,6 +129,16 @@
     "prettier/prettier": "error"
   },
   "overrides": [
+    {
+      "files": ["**/__tests__/?(*.)+(spec|test).tsx?"],
+      "plugins": ["jest-dom", "testing-library", "jest"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
+    },
     {
       "files": ["*.astro"],
       "plugins": ["astro"],

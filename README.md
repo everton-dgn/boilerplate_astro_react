@@ -177,7 +177,7 @@ yarn check:update
 
 # :rotating_light: Important Considerations
 
-- The husky is configured to not allow commit if there are any lint and typescript errors. The push can only be done if all tests and builds (of the project and the storybook) pass.
+- The husky is configured to not allow commit if there are any lint and typescript errors. The push can only be done if all tests and builds pass.
 
 - Due to husky's build check settings, to push with git, the development server must be stopped first or an error will occur in the `git push` command.
 

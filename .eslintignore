@@ -7,3 +7,4 @@ src/env.d.ts
 vitest.config.ts
 stylelint.config.js
 vitest.setup.ts
+vite.config.ts
