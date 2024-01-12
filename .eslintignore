@@ -1,0 +1,9 @@
+public/*
+yarn.lock
+.gitignore
+.prettierignore
+.tsBuildInfoFile
+src/env.d.ts
+vitest.config.ts
+stylelint.config.js
+vitest.setup.ts
