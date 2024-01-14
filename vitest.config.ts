@@ -5,9 +5,22 @@ export default getViteConfig({
     coverage: {
       provider: 'v8'
     },
-    environment: 'happy-dom',
+    environment: 'jsdom',
     globals: true,
     passWithNoTests: true,
-    setupFiles: ['./vitest.setup.ts']
+    setupFiles: ['./vitest.setup.ts'],
+    testTransformMode: { web: ["/\.tsx?$/"] },
+    include: ['src/**/*.test.{ts,tsx}'],
+    exclude: ['**/node_modules/**', '**/playwright/**'],
+    deps: {
+      optimizer: {
+        web: {
+          include: ['react']
+        }
+      }
+    },
+  },
+  resolve: {
+    conditions: ['development', 'browser'],
   }
 })

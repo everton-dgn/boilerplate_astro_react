@@ -6,6 +6,9 @@
     "astro/astro": true
   },
   "settings": {
+    "playwright": {
+      "additionalAssertFunctionNames": ["assertCustomCondition"]
+    },
     "react": {
       "version": "detect"
     },
@@ -59,7 +62,8 @@
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react",
     "plugin:jest/style",
-    "plugin:astro/recommended"
+    "plugin:astro/recommended",
+    "plugin:playwright/recommended"
   ],
   "rules": {
     "import-helpers/order-imports": [
@@ -130,14 +134,21 @@
   },
   "overrides": [
     {
-      "files": ["**/__tests__/?(*.)+(spec|test).tsx?"],
+      "files": ["src/**/*.test.{ts,tsx}"],
       "plugins": ["jest-dom", "testing-library", "jest"],
       "extends": [
         "plugin:jest-dom/recommended",
         "plugin:testing-library/react",
-        "plugin:jest/recommended",
         "plugin:jest/style"
-      ]
+      ],
+      "excludedFiles": ["**/*.spec.ts"]
+    },
+    {
+      "files": ["src/**/*.spec.{ts,tsx}"],
+      "rules": {
+        "jest-dom/prefer-in-document": "off",
+        "testing-library/prefer-screen-queries": "off"
+      }
     },
     {
       "files": ["*.astro"],

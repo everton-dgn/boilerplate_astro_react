@@ -4,7 +4,8 @@ yarn.lock
 .prettierignore
 .tsBuildInfoFile
 src/env.d.ts
-vitest.config.ts
 stylelint.config.js
+vitest.config.ts
 vitest.setup.ts
-vite.config.ts
+playwright.config.ts
+playwright-report

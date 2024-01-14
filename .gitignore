@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/playwright-report
 
 # build output
 dist/
@@ -40,3 +41,6 @@ tsconfig.tsbuildinfo
 .eslintcache
 .stylelintcache
 .husky
+/test-results/
+/blob-report/
+/playwright/.cache/

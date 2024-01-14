@@ -1,5 +1,3 @@
-'use client'
-
 import { useCount } from 'hooks'
 
 import { Button } from '../Button'
