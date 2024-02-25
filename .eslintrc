@@ -2,8 +2,7 @@
   "env": {
     "browser": true,
     "es2022": true,
-    "node": true,
-    "astro/astro": true
+    "node": true
   },
   "settings": {
     "playwright": {
@@ -18,7 +17,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "tsconfig.json"
+        "project": "./tsconfig.json"
       }
     }
   },
@@ -32,16 +31,12 @@
     "extraFileExtensions": [".astro"]
   },
   "plugins": [
-    "astro",
     "react",
     "react-hooks",
     "@typescript-eslint",
     "sonarjs",
     "promise",
     "prettier",
-    "testing-library",
-    "jest-dom",
-    "jest",
     "jsx-a11y",
     "import",
     "eslint-plugin-import-helpers"
@@ -58,12 +53,7 @@
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",
     "prettier",
-    "plugin:prettier/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react",
-    "plugin:jest/style",
-    "plugin:astro/recommended",
-    "plugin:playwright/recommended"
+    "plugin:prettier/recommended"
   ],
   "rules": {
     "import-helpers/order-imports": [
@@ -134,25 +124,34 @@
   },
   "overrides": [
     {
-      "files": ["src/**/*.test.{ts,tsx}"],
+      "files": ["src/**/__tests__/*.test.{ts,tsx}"],
       "plugins": ["jest-dom", "testing-library", "jest"],
       "extends": [
         "plugin:jest-dom/recommended",
-        "plugin:testing-library/react",
-        "plugin:jest/style"
+        "plugin:jest/style",
+        "plugin:testing-library/react"
       ],
-      "excludedFiles": ["**/*.spec.ts"]
-    },
-    {
-      "files": ["src/**/*.spec.{ts,tsx}"],
+      "excludedFiles": ["**/*.spec.ts"],
       "rules": {
-        "jest-dom/prefer-in-document": "off",
-        "testing-library/prefer-screen-queries": "off"
+        "jest/no-disabled-tests": "off",
+        "testing-library/render-result-naming-convention": "off",
+        "jest/no-commented-out-tests": "off"
       }
     },
     {
+      "files": ["src/tests/*.spec.ts"],
+      "extends": ["plugin:playwright/recommended"],
+      "rules": {
+        "playwright/no-skipped-test": "off"
+      }
+    },
+    {
+      "env": {
+        "astro/astro": true
+      },
       "files": ["*.astro"],
       "plugins": ["astro"],
+      "extends": ["plugin:astro/recommended"],
       "processor": "astro/client-side-ts",
       "parser": "astro-eslint-parser",
       "parserOptions": {

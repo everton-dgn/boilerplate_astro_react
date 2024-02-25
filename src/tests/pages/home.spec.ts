@@ -24,6 +24,6 @@ test.describe('navigation', () => {
     await buttonCount.click()
 
     const buttonText2 = page.getByRole('button', { name: 'COUNT: 2' })
-    expect(buttonText2).toBeDefined()
+    await expect(buttonText2).toBeVisible()
   })
 })

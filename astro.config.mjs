@@ -9,6 +9,6 @@ export default defineConfig({
     }
   },
   integrations: [react()],
-  output: "server",
+  output: "hybrid",
   adapter: vercel({ react: true })
 });
