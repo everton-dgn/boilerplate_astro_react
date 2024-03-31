@@ -38,5 +38,5 @@
     "src/**/*.astro",
     "./vitest.setup.ts"
   ],
-  "exclude": ["node_modules", "src/**/*.js"]
+  "exclude": ["node_modules"]
 }
