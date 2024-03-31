@@ -4,8 +4,9 @@ yarn.lock
 .prettierignore
 .tsBuildInfoFile
 src/env.d.ts
-stylelint.config.js
+postcss.config.js
 vitest.config.ts
+tailwind.config.ts
 vitest.setup.ts
 playwright.config.ts
 playwright-report

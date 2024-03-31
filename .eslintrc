@@ -39,7 +39,8 @@
     "prettier",
     "jsx-a11y",
     "import",
-    "eslint-plugin-import-helpers"
+    "eslint-plugin-import-helpers",
+    "tailwindcss"
   ],
   "extends": [
     "standard-with-typescript",
@@ -53,7 +54,8 @@
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",
     "prettier",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "rules": {
     "import-helpers/order-imports": [
@@ -73,6 +75,7 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "tailwindcss/no-custom-classname": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/unbound-method": "off",
     "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
