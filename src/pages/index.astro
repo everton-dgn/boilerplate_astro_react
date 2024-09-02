@@ -1,31 +1,29 @@
 ---
-import { CounterButton } from 'components/atoms'
-import RootLayout from 'layouts/RootLayout.astro'
+import { CounterButton } from 'components/atoms/CounterButton'
+import RootLayout from 'components/layouts/RootLayout/RootLayout.astro'
+
+import S from './_styles.module.scss'
 ---
 
-<RootLayout title="Boilerplate" description="Boilerplate Astro.js + React">
-  <div class="h-full grow p-16 col-full center">
-    <header class="mb-5 fs-3xl-semibold tx-center" role="banner">
-      Boilerplate
-    </header>
-    <main class="h-fit p-0 col center g-5">
-      <div class="px-4 py-0 f-wrap g-5 jc-center row-full">
+<RootLayout title="Boilerplate" description="Boilerplate Astro.js + React.js">
+  <div class={S.container}>
+    <header class={S.header} role="banner">Boilerplate</header>
+    <main class={S.main}>
+      <div class={S.wrapper_images}>
         <img
           alt="Logo Astro.js"
           height={77}
           src="/images/logo_astro.svg"
           width={77}
-          class="relative sm:size-[155px] sm:min-w-[155px]"
         />
         <img
           alt="Logo React"
           height={77}
           src="/images/logo_react.svg"
           width={87}
-          class="relative sm:h-[155px] sm:w-[174px] sm:min-w-[174px]"
         />
       </div>
-      <h1 class="fs-3xl-medium tx-center">Astro.js + React</h1>
+      <h1 class={S.title}>Astro.js + React.js</h1>
       <CounterButton client:load />
     </main>
   </div>
