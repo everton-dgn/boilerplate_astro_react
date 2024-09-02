@@ -1,6 +1,8 @@
+// @ts-nocheck
+/// <reference types="vitest" />
 import { getViteConfig } from 'astro/config'
 
-export default getViteConfig({
+const config = getViteConfig({
   test: {
     deps: {
       optimizer: {
@@ -10,7 +12,9 @@ export default getViteConfig({
       }
     },
     coverage: {
-      provider: 'v8'
+      provider: 'v8',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/assets/', 'src/tests/']
     },
     environment: 'jsdom',
     globals: true,
@@ -19,8 +23,16 @@ export default getViteConfig({
     testTransformMode: { web: ["/\.tsx?$/"] },
     include: ['src/**/__tests__/*.test.{ts,tsx}'],
     exclude: ['**/node_modules/**', '**/playwright/**'],
+    pool: 'forks',
+    poolOptions: {
+      forks: {
+        isolate: false
+      }
+    }
   },
   resolve: {
     conditions: ['development', 'browser'],
   }
 })
+
+export default config

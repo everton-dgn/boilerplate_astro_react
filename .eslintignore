@@ -4,9 +4,11 @@ yarn.lock
 .prettierignore
 .tsBuildInfoFile
 src/env.d.ts
-postcss.config.js
+postcss.config.cjs
 vitest.config.ts
-tailwind.config.ts
 vitest.setup.ts
+astro.config.ts
+node_modules
+.vercel
 playwright.config.ts
 playwright-report

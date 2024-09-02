@@ -39,8 +39,6 @@ tsconfig.tsbuildinfo
 
 # linters
 .eslintcache
-.stylelintcache
 .husky
 /test-results/
-/blob-report/
 /playwright/.cache/

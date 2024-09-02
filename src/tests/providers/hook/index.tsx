@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { renderHook, type RenderHookResult } from '@testing-library/react'
-
-import { MainProvider } from 'providers/mainProvider'
+import { MainProvider } from 'components/providers/MainProvider'
 
 import type { RenderHooksProviderProps, WrapperProps } from './types'
 

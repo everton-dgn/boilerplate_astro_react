@@ -1,17 +1,26 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from "@astrojs/vercel/serverless";
-import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
+  security: {
+    checkOrigin: true
+  },
+  publicDir: 'public',
+  // site: 'https://example.com',
+  prefetch: {
+    prefetchAll: false
+  },
   vite: {
     optimizeDeps: {
       exclude: ['fsevents']
     }
   },
-  integrations: [react(), tailwind()],
+  integrations: [react()],
   output: "hybrid",
   adapter: vercel({
-    react: true
+    imageService: true,
+    isr: true,
+    edgeMiddleware: true
   })
-});
+})
