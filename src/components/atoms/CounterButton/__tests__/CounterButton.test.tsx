@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithProviders } from 'tests/providers'
-import { event } from 'tests/helpFunctions'
+import { event } from 'tests/utils'
 
 import { CounterButton } from '..'
 
